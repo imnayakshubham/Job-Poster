@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Post Jobs
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <form action="{{url_for('postjob')}}" method="post">
+            <div class="form-group ">
+                <input type="text" class="form-control" placeholder="Enter Your Full Name" required name="posted_by">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Job Title" required name="job_title">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Company Name" required name="company_name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Experience Required" required name="experience">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Skills Required" required name="skills">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Job description" required name="job_desc">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Required Roles and Responsibility" required name="ros">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Job Location" required name="location">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Apply link/Email-address" required name="apply_link">
+            </div>
+              
+              
+            <button type="submit" class="btn btn-primary">Post Job</button>
+        </form>
+    </div>
+{% endblock %}

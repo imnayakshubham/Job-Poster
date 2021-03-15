@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     View Jobs
+{% endblock %}
+
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+    *{
+        padding: 0%;
+        margin-top: 0%;
+        font-family:'Titillium Web',sans-serif ;
+
+    }
+    body,a{
+        font-size: 14px;
+    }
+    .container{
+        border: 1px solid black;
+        box-shadow: 5px 5px;
+        padding-bottom: 10px;
+        border-style: groove;
+
+    }
+    h3{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    h1{
+        font-weight: bold;
+
+    }
+    h4{
+        color: rgb(36, 34, 34);
+    }
+
+</style>
+    
+      {% for job in jobs %}
+      <div class="container p-3 my-3 bg-dark text-white">
+        <h1>{{ job.job_title }}</h1>
+        <h4>Company : {{ job.company_name }}
+        </h4>
+        <hr>
+
+        <h4>Experience Required : {{ job.experience }} </h4>
+        <h4>Job Location : {{ job.location }} </h4>
+        <h4>Posted by : {{ job.posted_by }} </h4>
+        <hr>
+        <h3>Roles and Responsibities</h3>
+        
+        <p>{{ job.roles_res }}</p> 
+        <h3>Required Skills</h3>
+
+        <p>{{ job.skills }}</p>
+
+        <h3>Job Description</h3>
+
+        <p>{{ job.job_desc }}</p>
+        <hr>
+        <center>
+
+
+            <a href="{{ job.apply_link }}" class="btn btn-dark" role="button">Apply</a>
+        </center>
+
+
+      </div>
+      {% endfor %}
+
+
+
+{% endblock %}
